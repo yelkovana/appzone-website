@@ -624,10 +624,6 @@
             text-decoration: none;
         }
 
-        /* ===== PAGES ===== */
-        .page { display: none; }
-        .page.active { display: block; }
-
         /* ===== MOBILE NAV OVERLAY ===== */
         .mobile-overlay {
             display: none;
@@ -705,16 +701,17 @@
 <!-- NAV -->
 <nav>
     <div class="nav-inner">
-        <a href="javascript:void(0)" class="nav-logo" onclick="go('main')">
+        <a href="/" class="nav-logo">
             <div class="nav-logo-icon">A</div>
             Appzone
         </a>
         <ul class="nav-links">
-            <li><a href="javascript:void(0)" class="active" onclick="go('main')">Home</a></li>
+            <li><a href="/" class="active">Home</a></li>
             <li><a href="javascript:void(0)" onclick="goTo('projects')">Projects</a></li>
             <li><a href="javascript:void(0)" onclick="goTo('about')">About</a></li>
-            <li><a href="javascript:void(0)" onclick="go('terms')">Terms of Use</a></li>
-            <li><a href="javascript:void(0)" onclick="go('privacy')">Privacy Policy</a></li>
+
+            <li><a href="/terms-of-use">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
             <li><a href="javascript:void(0)" onclick="goTo('contact')">Contact</a></li>
         </ul>
         <div class="nav-hamburger" onclick="document.getElementById('mob').classList.add('open')">
@@ -726,16 +723,13 @@
 <!-- Mobile Overlay -->
 <div class="mobile-overlay" id="mob">
     <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
-    <a href="javascript:void(0)" onclick="go('main');closeMob()">Home</a>
+    <a href="/">Home</a>
     <a href="javascript:void(0)" onclick="goTo('projects');closeMob()">Projects</a>
     <a href="javascript:void(0)" onclick="goTo('about');closeMob()">About</a>
-    <a href="javascript:void(0)" onclick="go('terms');closeMob()">Terms of Use</a>
-    <a href="javascript:void(0)" onclick="go('privacy');closeMob()">Privacy Policy</a>
+    <a href="/terms-of-use">Terms of Use</a>
+    <a href="/privacy-policy">Privacy Policy</a>
     <a href="javascript:void(0)" onclick="goTo('contact');closeMob()">Contact</a>
 </div>
-
-<!-- ==================== MAIN PAGE ==================== -->
-<div id="page-main" class="page active">
 
     <!-- Hero -->
     <div class="hero">
@@ -850,192 +844,15 @@
         </div>
     </div>
 
-</div>
-
-<!-- ==================== TERMS OF USE ==================== -->
-<div id="page-terms" class="page">
-    <div class="legal-page">
-        <div class="legal-inner">
-            <h1 class="legal-page-title">Terms of Use</h1>
-
-            <h3 class="legal-section-title">Parties</h3>
-            <p class="legal-p">This agreement is made between Appzone Dijital Hizmetler Anonim &#350;irketi ("the Company") and the user who accepts these Terms of Use. These terms take effect upon mutual acceptance by both parties.</p>
-
-            <h3 class="legal-section-title">Standing</h3>
-            <p class="legal-p">To be a party to this agreement, the user must be at least 14 years old and have the mental capacity to understand and accept these terms.</p>
-
-            <h3 class="legal-section-title">Definitions</h3>
-            <p class="legal-p">The following definitions apply to this contract:</p>
-            <p class="legal-p"><strong>Company:</strong> Refers to Appzone Dijital Hizmetler Anonim &#350;irketi, acting as a service provider.</p>
-            <p class="legal-p"><strong>Application:</strong> The digital platform where the Company's products and services can be accessed via mobile devices, computers, and other platforms.</p>
-            <p class="legal-p"><strong>Account:</strong> The user profile created to access and benefit from the services.</p>
-            <p class="legal-p"><strong>User:</strong> Any individual who accepts these terms and uses the Application and related services.</p>
-            <p class="legal-p"><strong>Services:</strong> All services made available by the Company through the Application.</p>
-            <p class="legal-p"><strong>System Access Tools:</strong> Credentials and materials such as usernames, passwords, and codes that enable secure access to the Application.</p>
-            <p class="legal-p"><strong>Communication Channels:</strong> Methods of communication including in-app notifications, e-mail, phone, SMS, and MMS.</p>
-            <p class="legal-p"><strong>Notification E-mail Address:</strong> The valid e-mail address provided by users to receive Company communications.</p>
-            <p class="legal-p"><strong>Management Page:</strong> The interface where user-related services and transactions are carried out.</p>
-            <p class="legal-p"><strong>User Data:</strong> All data provided by or collected from users in connection with the Application.</p>
-            <p class="legal-p"><strong>Period:</strong> The duration of the user's access to services.</p>
-            <p class="legal-p"><strong>Reasonable Use:</strong> The acceptable level of service usage based on standard, objective criteria.</p>
-
-            <h3 class="legal-section-title">Subject and Scope</h3>
-            <p class="legal-p">This agreement defines the conditions under which users may access and use the Company's services and products.</p>
-            <p class="legal-p">By accepting these terms, the User agrees to comply with all rules and responsibilities set forth herein.</p>
-            <p class="legal-p">Any damages resulting from violations of these terms are the responsibility of the User; the Company shall not be liable for such damages.</p>
-
-            <h3 class="legal-section-title">Duration</h3>
-            <p class="legal-p">These Terms of Use take effect once the User provides electronic consent.</p>
-            <p class="legal-p">The agreement remains valid as long as the User maintains an account. Non-use of the Application does not terminate the agreement unless the account and all associated data are deleted.</p>
-            <p class="legal-p">Membership periods automatically renew unless canceled by the User.</p>
-
-            <h3 class="legal-section-title">Data Protection and Processing</h3>
-            <p class="legal-p">Users give explicit consent for their personal data to be processed, stored, and transferred by Appzone Dijital Hizmetler Anonim &#350;irketi, both domestically and internationally, for the purpose of improving services.</p>
-            <p class="legal-p">Users may request information on processed data or ask for deletion.</p>
-            <p class="legal-p">Data is managed in compliance with applicable legal regulations where the Company operates.</p>
-
-            <h3 class="legal-section-title">Third-Party Data Collection</h3>
-            <p class="legal-p">The Company may cooperate with analytics and advertising partners to better understand service use and improve offerings. These partners may access limited user data.</p>
-            <p class="legal-p">External websites or applications accessed through links may collect user data. In such cases, their own policies apply, not the Company's.</p>
-
-            <h3 class="legal-section-title">Communication Channels and Permissions</h3>
-            <p class="legal-p">The Company may send free newsletters, updates, or notifications regarding its services via communication channels.</p>
-            <p class="legal-p">Users may withdraw consent for such communications at any time by notifying the Company. The Company will not be responsible if users miss updates due to withdrawn consent.</p>
-
-            <h3 class="legal-section-title">Responsibilities and Commitments</h3>
-            <p class="legal-p">Users must comply with these terms, relevant legislation, and local laws while using the Application.</p>
-            <p class="legal-p">The Company may update or modify the Application at its discretion, including removing or adding features.</p>
-
-            <h3 class="legal-section-title">User Rights and Obligations</h3>
-            <p class="legal-p">Users are responsible for safeguarding their access credentials, updating their contact details, ensuring the legality of their content, and complying with both national and international regulations. The Company is not liable for damages resulting from negligence, improper use, or third-party content.</p>
-
-            <h3 class="legal-section-title">Company Rights and Limitations of Liability</h3>
-            <p class="legal-p">The Company reserves rights to update services, restrict access, comply with legal obligations, and terminate accounts that violate laws or these terms. Liability for damages is limited to 5 USD in specific premium membership cases.</p>
-
-            <h3 class="legal-section-title">Violations of Terms of Use</h3>
-            <p class="legal-p">If a User violates these terms, the Company may warn, restrict, or terminate accounts, remove unlawful content, and cooperate with legal authorities. No refunds will be issued in such cases.</p>
-
-            <h3 class="legal-section-title">Amendments and Interpretation</h3>
-            <p class="legal-p">The Company may update these Terms of Use at any time by publishing changes within the Application. Invalid provisions will be revised in favor of the Company without affecting the rest of the agreement.</p>
-
-            <h3 class="legal-section-title">Dispute Resolution</h3>
-            <p class="legal-p">Parties will first attempt to resolve disputes amicably. If unresolved, applicable laws of the country where Appzone Dijital Hizmetler Anonim &#350;irketi has its headquarters or branches shall govern. The competent courts and enforcement authorities of that country will have jurisdiction.</p>
-
-            <h3 class="legal-section-title">Contact</h3>
-            <p class="legal-p">For any questions, feedback, or suggestions regarding these Terms of Use, you can contact us directly at <a href="mailto:help@appzonedev.com">help@appzonedev.com</a>.</p>
-
-        </div>
-    </div>
-</div>
-
-<!-- ==================== PRIVACY POLICY ==================== -->
-<div id="page-privacy" class="page">
-    <div class="legal-page">
-        <div class="legal-inner">
-            <h1 class="legal-page-title">Privacy Policy and Legal Disclaimer</h1>
-
-            <h3 class="legal-section-title">1. General Principles</h3>
-            <p class="legal-p">At Appzone Dijital Hizmetler Anonim &#350;irketi, protecting user data and ensuring privacy are among our core values.</p>
-            <p class="legal-p">This Privacy Policy explains how we handle data and clarifies our legal and intellectual property framework for this application.</p>
-            <p class="legal-p">The App currently does not collect, store, or process any personal data. No registration, login, or tracking of identifiable information is performed.</p>
-            <p class="legal-p">All user interactions remain on the device and are not transmitted to any server owned or controlled by Appzone Dijital Hizmetler Anonim &#350;irketi.</p>
-
-            <h3 class="legal-section-title">2. Use of User Information</h3>
-            <p class="legal-p">Since no personal data is collected or processed by the App, no user information is stored, analyzed, or used for marketing, advertising, or analytics purposes.</p>
-            <p class="legal-p">The App does not contact users or process any background communication.</p>
-
-            <h3 class="legal-section-title">3. Data Access and Sharing</h3>
-            <p class="legal-p">The App does not access, record, or share any user content, device data, or identifiable information.</p>
-            <p class="legal-p">No user data is transferred to Appzone Dijital Hizmetler Anonim &#350;irketi or to third parties.</p>
-            <p class="legal-p">Any data processed through third-party AI services (listed below) occurs directly between the user and the third-party provider, under their own privacy terms.</p>
-
-            <h3 class="legal-section-title">4. Technical Data and IP Information</h3>
-            <p class="legal-p">The App does not log or record IP addresses, cookies, device identifiers, or technical metadata.</p>
-            <p class="legal-p">No analytics SDKs or tracking tools are implemented.</p>
-
-            <h3 class="legal-section-title">5. Categories of Data Collected</h3>
-            <p class="legal-p">No personal or anonymous data is collected, stored, or transmitted by Appzone Dijital Hizmetler Anonim &#350;irketi.</p>
-            <p class="legal-p">If third-party AI tools collect information (e.g., API usage logs), such data remains under the control of those third parties and is subject to their own privacy policies.</p>
-
-            <h3 class="legal-section-title">6. Purposes of Data Usage</h3>
-            <p class="legal-p">Since no data is collected, there are no purposes for data processing or analytics.</p>
-
-            <h3 class="legal-section-title">7. Data Sharing with Third Parties</h3>
-            <p class="legal-p">The App does not share any data with third parties.</p>
-            <p class="legal-p">However, users may voluntarily use external AI generation services through the App interface. These services include:</p>
-            <p class="legal-p legal-sub">Sora<br>Veo<br>Kling AI<br>Fal AI</p>
-            <p class="legal-p">All AI processing (video, image, or media generation) occurs outside the App, through these providers' APIs.</p>
-
-            <h3 class="legal-section-title">8. Legal Exceptions</h3>
-            <p class="legal-p">Appzone Dijital Hizmetler Anonim &#350;irketi does not collect user data, so no disclosures to authorities or third parties occur.</p>
-            <p class="legal-p">If users directly interact with external providers (e.g., Sora, Veo, Kling, Fal AI), those providers' legal terms apply independently.</p>
-
-            <h3 class="legal-section-title">9. User Rights and Choices</h3>
-            <p class="legal-p">Since no personal data is collected or processed, users do not need to take any action regarding data access or deletion.</p>
-            <p class="legal-p">If you have any questions or requests, you may contact us at: <a href="mailto:help@appzonedev.com">help@appzonedev.com</a></p>
-
-            <h3 class="legal-section-title">10. Data Security and Confidentiality</h3>
-            <p class="legal-p">Although no personal data is collected or transmitted, Appzone Dijital Hizmetler Anonim &#350;irketi implements best practices to ensure that the App operates securely and without unauthorized data flow.</p>
-            <p class="legal-p">Users are encouraged to use official app stores and avoid sharing sensitive data within third-party integrations.</p>
-
-            <h3 class="legal-section-title">11. Legal Disclaimer</h3>
-
-            <p class="legal-p"><strong>11.1 Independent Development Notice</strong></p>
-            <p class="legal-p">This application has been independently developed by Appzone Dijital Hizmetler Anonim &#350;irketi and operates under its own intellectual property rights. It has no legal, technical, or commercial connection to any prior application, developer, or intellectual property previously assigned or transferred under any agreement. All code, UI, and design elements are newly developed and original.</p>
-
-            <p class="legal-p"><strong>11.2 Technology &amp; Model Usage</strong></p>
-            <p class="legal-p">This App functions solely as a bridge interface to connect users with external AI video and image generation services. It does not directly generate, render, or store any AI output. External AI services used within the App may include (but are not limited to): Sora, Veo, Kling AI, Fal AI. All AI-generated content and data remain under the independent responsibility of these third-party providers.</p>
-
-            <p class="legal-p"><strong>11.3 Intellectual Property Statement</strong></p>
-            <p class="legal-p">All intellectual property rights in this App &mdash; including its name, branding, user interface, and visual design &mdash; are original creations developed after the completion of prior contractual assignments. Generic terms such as "AI Video," "Studio," and "Generator" are used purely descriptively to indicate functionality and do not imply continuity, ownership, or association with any previously developed app.</p>
-
-            <p class="legal-p"><strong>11.4 Limitation of Liability</strong></p>
-            <p class="legal-p">Appzone Dijital Hizmetler Anonim &#350;irketi does not claim ownership or control over any content generated by external AI services (including Sora, Veo, Kling AI, or Fal AI). Users are solely responsible for how they use or share outputs generated via these third-party systems.</p>
-
-            <p class="legal-p"><strong>11.5 No Affiliation or Continuity Representation</strong></p>
-            <p class="legal-p">This application is not a continuation, successor, or derivative work of any previously transferred or assigned app. Any similarity in concept or terminology arises solely from common AI industry terms and not from shared ownership or code.</p>
-
-            <h3 class="legal-section-title">12. Changes to Privacy Policy</h3>
-            <p class="legal-p">This Privacy Policy and Legal Disclaimer may be updated periodically to ensure compliance with legal standards and to reflect functional changes. Updates will be effective upon publication within the App or via official communication channels.</p>
-
-            <h3 class="legal-section-title">13. Data Collection</h3>
-            <p class="legal-p"><strong>Data Collection for AI Analysis:</strong> Our AI Creator app allows users to upload videos to analyze their viral potential. When you explicitly consent and select a video, it is securely transmitted to our third-party AI service provider, Google (Google Gemini API). This data is strictly used for generating your video analysis report and is not utilized for any other purposes. Google provides the same or equal protection of user data as outlined in our privacy policy.</p>
-            <p class="legal-p"><strong>AI Analysis and Third-Party Processing:</strong> To provide our video analysis features, the video content you choose to analyze may be securely transmitted to a third-party artificial intelligence service provider, such as Google (Google Gemini API). This processing is necessary to generate insights, analytics, and reports about the potential performance of your video content.</p>
-            <p class="legal-p">Your video is shared with the third-party provider only after you explicitly grant permission within the application. The content is used solely for the purpose of generating the requested analysis and is not used for any other purpose by our service.</p>
-            <p class="legal-p">We take reasonable measures to ensure that any third-party providers we use process data in accordance with applicable privacy and data protection standards. However, once the content is transmitted to the third-party provider, it will be subject to that provider's own privacy policies and terms.</p>
-            <p class="legal-p">By allowing the analysis feature, you consent to the secure transfer and processing of your selected video by the third-party AI provider for the limited purpose described above.</p>
-
-            <h3 class="legal-section-title">14. Acceptance</h3>
-            <p class="legal-p">By using this App, users acknowledge and agree that: no personal data is collected, external AI services operate independently, and Appzone Dijital Hizmetler Anonim &#350;irketi bears no liability for third-party AI outputs.</p>
-
-            <h3 class="legal-section-title">15. Contact Us</h3>
-            <p class="legal-p">If you have any questions, feedback, suggestions, objections, or complaints regarding this Privacy Policy, or about the collection, use, disclosure, and sharing of your personal data with third parties, you can reach us directly at <a href="mailto:help@appzonedev.com">help@appzonedev.com</a>.</p>
-
-        </div>
-    </div>
-</div>
-
 <!-- FOOTER -->
 <footer>
     &copy; 2025 Appzone Dijital Hizmetler A.&#350;. All rights reserved.
 </footer>
 
 <script>
-function go(page) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + page).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    setTimeout(initSR, 50);
-}
-
 function goTo(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-main').classList.add('active');
-    setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 30);
-    setTimeout(initSR, 50);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function closeMob() {
