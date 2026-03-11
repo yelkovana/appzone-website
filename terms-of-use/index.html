@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Appzone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --bg-light: #f8fafb;
+            --bg-dark: #0b0f14;
+            --bg-dark-card: rgba(255,255,255,0.04);
+            --accent: #10b981;
+            --accent-hover: #34d399;
+            --accent-dim: rgba(16,185,129,0.12);
+            --accent-glow: rgba(16,185,129,0.25);
+            --cyan: #06b6d4;
+            --text-primary: #1a1a2e;
+            --text-secondary: #64748b;
+            --text-tertiary: #94a3b8;
+            --text-on-dark: #e2e8f0;
+            --border: #e2e8f0;
+            --border-dark: rgba(255,255,255,0.08);
+            --nav-bg: rgba(11,15,20,0.85);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        ::selection { background: var(--accent); color: #fff; }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--nav-bg);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .nav-inner {
+            max-width: 1080px;
+            width: 100%;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--bg-dark);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color 0.2s;
+            letter-spacing: 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--white); }
+
+        .nav-hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--white);
+        }
+
+        /* ===== SECTIONS (light) ===== */
+        .section {
+            padding: 100px 28px;
+        }
+
+        .section-dark {
+            background: var(--bg-dark);
+            color: var(--text-on-dark);
+        }
+
+        .section-light {
+            background: var(--bg-light);
+        }
+
+        .section-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .section-dark .section-desc {
+            color: var(--text-tertiary);
+        }
+
+        /* ===== LEGAL PAGES ===== */
+        .legal-page {
+            padding: 120px 28px 80px;
+            background: var(--white);
+        }
+
+        .legal-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .legal-page-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .legal-section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 36px 0 12px;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .legal-p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .legal-p a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .legal-p a:hover { text-decoration: underline; }
+
+        .legal-sub {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-dark);
+            padding: 24px 28px;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+            border-top: 1px solid var(--border-dark);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== MOBILE NAV OVERLAY ===== */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1001;
+            background: rgba(11,15,20,0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .mobile-overlay.open { display: flex; }
+
+        .mobile-overlay a {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-on-dark);
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.2s;
+        }
+
+        .mobile-overlay a:hover { color: var(--accent); }
+
+        .mobile-close {
+            position: absolute;
+            top: 14px; right: 22px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-on-dark);
+            cursor: pointer;
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .sr {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .sr.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sr-d1 { transition-delay: 0.1s; }
+        .sr-d2 { transition-delay: 0.2s; }
+        .sr-d3 { transition-delay: 0.3s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: block; }
+            .section { padding: 72px 24px; }
+        }
+
+        @media (max-width: 480px) {
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <div class="nav-logo-icon">A</div>
+            Appzone
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/terms-of-use" class="active">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="nav-hamburger" onclick="document.getElementById('mob').classList.add('open')">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="17" y2="6"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="14" x2="17" y2="14"/></svg>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" id="mob">
+    <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="/" onclick="closeMob()">Home</a>
+    <a href="/#projects" onclick="closeMob()">Projects</a>
+    <a href="/#about" onclick="closeMob()">About</a>
+    <a href="/terms-of-use" onclick="closeMob()">Terms of Use</a>
+    <a href="/privacy-policy" onclick="closeMob()">Privacy Policy</a>
+    <a href="/#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- TERMS OF USE CONTENT -->
+<div class="legal-page">
+    <div class="legal-inner">
+        <h1 class="legal-page-title">Terms of Use</h1>
+
+        <h3 class="legal-section-title">Parties</h3>
+        <p class="legal-p">This agreement is made between Appzone Dijital Hizmetler Anonim &#350;irketi ("the Company") and the user who accepts these Terms of Use. These terms take effect upon mutual acceptance by both parties.</p>
+
+        <h3 class="legal-section-title">Standing</h3>
+        <p class="legal-p">To be a party to this agreement, the user must be at least 14 years old and have the mental capacity to understand and accept these terms.</p>
+
+        <h3 class="legal-section-title">Definitions</h3>
+        <p class="legal-p">The following definitions apply to this contract:</p>
+        <p class="legal-p"><strong>Company:</strong> Refers to Appzone Dijital Hizmetler Anonim &#350;irketi, acting as a service provider.</p>
+        <p class="legal-p"><strong>Application:</strong> The digital platform where the Company's products and services can be accessed via mobile devices, computers, and other platforms.</p>
+        <p class="legal-p"><strong>Account:</strong> The user profile created to access and benefit from the services.</p>
+        <p class="legal-p"><strong>User:</strong> Any individual who accepts these terms and uses the Application and related services.</p>
+        <p class="legal-p"><strong>Services:</strong> All services made available by the Company through the Application.</p>
+        <p class="legal-p"><strong>System Access Tools:</strong> Credentials and materials such as usernames, passwords, and codes that enable secure access to the Application.</p>
+        <p class="legal-p"><strong>Communication Channels:</strong> Methods of communication including in-app notifications, e-mail, phone, SMS, and MMS.</p>
+        <p class="legal-p"><strong>Notification E-mail Address:</strong> The valid e-mail address provided by users to receive Company communications.</p>
+        <p class="legal-p"><strong>Management Page:</strong> The interface where user-related services and transactions are carried out.</p>
+        <p class="legal-p"><strong>User Data:</strong> All data provided by or collected from users in connection with the Application.</p>
+        <p class="legal-p"><strong>Period:</strong> The duration of the user's access to services.</p>
+        <p class="legal-p"><strong>Reasonable Use:</strong> The acceptable level of service usage based on standard, objective criteria.</p>
+
+        <h3 class="legal-section-title">Subject and Scope</h3>
+        <p class="legal-p">This agreement defines the conditions under which users may access and use the Company's services and products.</p>
+        <p class="legal-p">By accepting these terms, the User agrees to comply with all rules and responsibilities set forth herein.</p>
+        <p class="legal-p">Any damages resulting from violations of these terms are the responsibility of the User; the Company shall not be liable for such damages.</p>
+
+        <h3 class="legal-section-title">Duration</h3>
+        <p class="legal-p">These Terms of Use take effect once the User provides electronic consent.</p>
+        <p class="legal-p">The agreement remains valid as long as the User maintains an account. Non-use of the Application does not terminate the agreement unless the account and all associated data are deleted.</p>
+        <p class="legal-p">Membership periods automatically renew unless canceled by the User.</p>
+
+        <h3 class="legal-section-title">Data Protection and Processing</h3>
+        <p class="legal-p">Users give explicit consent for their personal data to be processed, stored, and transferred by Appzone Dijital Hizmetler Anonim &#350;irketi, both domestically and internationally, for the purpose of improving services.</p>
+        <p class="legal-p">Users may request information on processed data or ask for deletion.</p>
+        <p class="legal-p">Data is managed in compliance with applicable legal regulations where the Company operates.</p>
+
+        <h3 class="legal-section-title">Third-Party Data Collection</h3>
+        <p class="legal-p">The Company may cooperate with analytics and advertising partners to better understand service use and improve offerings. These partners may access limited user data.</p>
+        <p class="legal-p">External websites or applications accessed through links may collect user data. In such cases, their own policies apply, not the Company's.</p>
+
+        <h3 class="legal-section-title">Communication Channels and Permissions</h3>
+        <p class="legal-p">The Company may send free newsletters, updates, or notifications regarding its services via communication channels.</p>
+        <p class="legal-p">Users may withdraw consent for such communications at any time by notifying the Company. The Company will not be responsible if users miss updates due to withdrawn consent.</p>
+
+        <h3 class="legal-section-title">Responsibilities and Commitments</h3>
+        <p class="legal-p">Users must comply with these terms, relevant legislation, and local laws while using the Application.</p>
+        <p class="legal-p">The Company may update or modify the Application at its discretion, including removing or adding features.</p>
+
+        <h3 class="legal-section-title">User Rights and Obligations</h3>
+        <p class="legal-p">Users are responsible for safeguarding their access credentials, updating their contact details, ensuring the legality of their content, and complying with both national and international regulations. The Company is not liable for damages resulting from negligence, improper use, or third-party content.</p>
+
+        <h3 class="legal-section-title">Company Rights and Limitations of Liability</h3>
+        <p class="legal-p">The Company reserves rights to update services, restrict access, comply with legal obligations, and terminate accounts that violate laws or these terms. Liability for damages is limited to 5 USD in specific premium membership cases.</p>
+
+        <h3 class="legal-section-title">Violations of Terms of Use</h3>
+        <p class="legal-p">If a User violates these terms, the Company may warn, restrict, or terminate accounts, remove unlawful content, and cooperate with legal authorities. No refunds will be issued in such cases.</p>
+
+        <h3 class="legal-section-title">Amendments and Interpretation</h3>
+        <p class="legal-p">The Company may update these Terms of Use at any time by publishing changes within the Application. Invalid provisions will be revised in favor of the Company without affecting the rest of the agreement.</p>
+
+        <h3 class="legal-section-title">Dispute Resolution</h3>
+        <p class="legal-p">Parties will first attempt to resolve disputes amicably. If unresolved, applicable laws of the country where Appzone Dijital Hizmetler Anonim &#350;irketi has its headquarters or branches shall govern. The competent courts and enforcement authorities of that country will have jurisdiction.</p>
+
+        <h3 class="legal-section-title">Contact</h3>
+        <p class="legal-p">For any questions, feedback, or suggestions regarding these Terms of Use, you can contact us directly at <a href="mailto:help@appzonedev.com">help@appzonedev.com</a>.</p>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2025 Appzone Dijital Hizmetler A.&#350;. All rights reserved.
+</footer>
+
+<script>
+function closeMob() {
+    document.getElementById('mob').classList.remove('open');
+}
+
+// Scroll reveal
+function initSR() {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.sr').forEach(el => {
+        el.classList.remove('visible');
+        obs.observe(el);
+    });
+}
+initSR();
+</script>
+</body>
+</html>

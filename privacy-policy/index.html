@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Appzone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --bg-light: #f8fafb;
+            --bg-dark: #0b0f14;
+            --bg-dark-card: rgba(255,255,255,0.04);
+            --accent: #10b981;
+            --accent-hover: #34d399;
+            --accent-dim: rgba(16,185,129,0.12);
+            --accent-glow: rgba(16,185,129,0.25);
+            --cyan: #06b6d4;
+            --text-primary: #1a1a2e;
+            --text-secondary: #64748b;
+            --text-tertiary: #94a3b8;
+            --text-on-dark: #e2e8f0;
+            --border: #e2e8f0;
+            --border-dark: rgba(255,255,255,0.08);
+            --nav-bg: rgba(11,15,20,0.85);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        ::selection { background: var(--accent); color: #fff; }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--nav-bg);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .nav-inner {
+            max-width: 1080px;
+            width: 100%;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--bg-dark);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color 0.2s;
+            letter-spacing: 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--white); }
+
+        .nav-hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--white);
+        }
+
+        /* ===== SECTIONS (light) ===== */
+        .section {
+            padding: 100px 28px;
+        }
+
+        .section-dark {
+            background: var(--bg-dark);
+            color: var(--text-on-dark);
+        }
+
+        .section-light {
+            background: var(--bg-light);
+        }
+
+        .section-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .section-dark .section-desc {
+            color: var(--text-tertiary);
+        }
+
+        /* ===== LEGAL PAGES ===== */
+        .legal-page {
+            padding: 120px 28px 80px;
+            background: var(--white);
+        }
+
+        .legal-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .legal-page-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .legal-section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 36px 0 12px;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .legal-p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .legal-p a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .legal-p a:hover { text-decoration: underline; }
+
+        .legal-sub {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-dark);
+            padding: 24px 28px;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+            border-top: 1px solid var(--border-dark);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== MOBILE NAV OVERLAY ===== */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1001;
+            background: rgba(11,15,20,0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .mobile-overlay.open { display: flex; }
+
+        .mobile-overlay a {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-on-dark);
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.2s;
+        }
+
+        .mobile-overlay a:hover { color: var(--accent); }
+
+        .mobile-close {
+            position: absolute;
+            top: 14px; right: 22px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-on-dark);
+            cursor: pointer;
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .sr {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .sr.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sr-d1 { transition-delay: 0.1s; }
+        .sr-d2 { transition-delay: 0.2s; }
+        .sr-d3 { transition-delay: 0.3s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: block; }
+            .section { padding: 72px 24px; }
+        }
+
+        @media (max-width: 480px) {
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <div class="nav-logo-icon">A</div>
+            Appzone
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/terms-of-use">Terms of Use</a></li>
+            <li><a href="/privacy-policy" class="active">Privacy Policy</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="nav-hamburger" onclick="document.getElementById('mob').classList.add('open')">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="17" y2="6"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="14" x2="17" y2="14"/></svg>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" id="mob">
+    <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="/" onclick="closeMob()">Home</a>
+    <a href="/#projects" onclick="closeMob()">Projects</a>
+    <a href="/#about" onclick="closeMob()">About</a>
+    <a href="/terms-of-use" onclick="closeMob()">Terms of Use</a>
+    <a href="/privacy-policy" onclick="closeMob()">Privacy Policy</a>
+    <a href="/#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- PRIVACY POLICY CONTENT -->
+<div class="legal-page">
+    <div class="legal-inner">
+        <h1 class="legal-page-title">Privacy Policy and Legal Disclaimer</h1>
+
+        <h3 class="legal-section-title">1. General Principles</h3>
+        <p class="legal-p">At Appzone Dijital Hizmetler Anonim &#350;irketi, protecting user data and ensuring privacy are among our core values.</p>
+        <p class="legal-p">This Privacy Policy explains how we handle data and clarifies our legal and intellectual property framework for this application.</p>
+        <p class="legal-p">The App currently does not collect, store, or process any personal data. No registration, login, or tracking of identifiable information is performed.</p>
+        <p class="legal-p">All user interactions remain on the device and are not transmitted to any server owned or controlled by Appzone Dijital Hizmetler Anonim &#350;irketi.</p>
+
+        <h3 class="legal-section-title">2. Use of User Information</h3>
+        <p class="legal-p">Since no personal data is collected or processed by the App, no user information is stored, analyzed, or used for marketing, advertising, or analytics purposes.</p>
+        <p class="legal-p">The App does not contact users or process any background communication.</p>
+
+        <h3 class="legal-section-title">3. Data Access and Sharing</h3>
+        <p class="legal-p">The App does not access, record, or share any user content, device data, or identifiable information.</p>
+        <p class="legal-p">No user data is transferred to Appzone Dijital Hizmetler Anonim &#350;irketi or to third parties.</p>
+        <p class="legal-p">Any data processed through third-party AI services (listed below) occurs directly between the user and the third-party provider, under their own privacy terms.</p>
+
+        <h3 class="legal-section-title">4. Technical Data and IP Information</h3>
+        <p class="legal-p">The App does not log or record IP addresses, cookies, device identifiers, or technical metadata.</p>
+        <p class="legal-p">No analytics SDKs or tracking tools are implemented.</p>
+
+        <h3 class="legal-section-title">5. Categories of Data Collected</h3>
+        <p class="legal-p">No personal or anonymous data is collected, stored, or transmitted by Appzone Dijital Hizmetler Anonim &#350;irketi.</p>
+        <p class="legal-p">If third-party AI tools collect information (e.g., API usage logs), such data remains under the control of those third parties and is subject to their own privacy policies.</p>
+
+        <h3 class="legal-section-title">6. Purposes of Data Usage</h3>
+        <p class="legal-p">Since no data is collected, there are no purposes for data processing or analytics.</p>
+
+        <h3 class="legal-section-title">7. Data Sharing with Third Parties</h3>
+        <p class="legal-p">The App does not share any data with third parties.</p>
+        <p class="legal-p">However, users may voluntarily use external AI generation services through the App interface. These services include:</p>
+        <p class="legal-p legal-sub">Sora<br>Veo<br>Kling AI<br>Fal AI</p>
+        <p class="legal-p">All AI processing (video, image, or media generation) occurs outside the App, through these providers' APIs.</p>
+
+        <h3 class="legal-section-title">8. Legal Exceptions</h3>
+        <p class="legal-p">Appzone Dijital Hizmetler Anonim &#350;irketi does not collect user data, so no disclosures to authorities or third parties occur.</p>
+        <p class="legal-p">If users directly interact with external providers (e.g., Sora, Veo, Kling, Fal AI), those providers' legal terms apply independently.</p>
+
+        <h3 class="legal-section-title">9. User Rights and Choices</h3>
+        <p class="legal-p">Since no personal data is collected or processed, users do not need to take any action regarding data access or deletion.</p>
+        <p class="legal-p">If you have any questions or requests, you may contact us at: <a href="mailto:help@appzonedev.com">help@appzonedev.com</a></p>
+
+        <h3 class="legal-section-title">10. Data Security and Confidentiality</h3>
+        <p class="legal-p">Although no personal data is collected or transmitted, Appzone Dijital Hizmetler Anonim &#350;irketi implements best practices to ensure that the App operates securely and without unauthorized data flow.</p>
+        <p class="legal-p">Users are encouraged to use official app stores and avoid sharing sensitive data within third-party integrations.</p>
+
+        <h3 class="legal-section-title">11. Legal Disclaimer</h3>
+
+        <p class="legal-p"><strong>11.1 Independent Development Notice</strong></p>
+        <p class="legal-p">This application has been independently developed by Appzone Dijital Hizmetler Anonim &#350;irketi and operates under its own intellectual property rights. It has no legal, technical, or commercial connection to any prior application, developer, or intellectual property previously assigned or transferred under any agreement. All code, UI, and design elements are newly developed and original.</p>
+
+        <p class="legal-p"><strong>11.2 Technology &amp; Model Usage</strong></p>
+        <p class="legal-p">This App functions solely as a bridge interface to connect users with external AI video and image generation services. It does not directly generate, render, or store any AI output. External AI services used within the App may include (but are not limited to): Sora, Veo, Kling AI, Fal AI. All AI-generated content and data remain under the independent responsibility of these third-party providers.</p>
+
+        <p class="legal-p"><strong>11.3 Intellectual Property Statement</strong></p>
+        <p class="legal-p">All intellectual property rights in this App &mdash; including its name, branding, user interface, and visual design &mdash; are original creations developed after the completion of prior contractual assignments. Generic terms such as "AI Video," "Studio," and "Generator" are used purely descriptively to indicate functionality and do not imply continuity, ownership, or association with any previously developed app.</p>
+
+        <p class="legal-p"><strong>11.4 Limitation of Liability</strong></p>
+        <p class="legal-p">Appzone Dijital Hizmetler Anonim &#350;irketi does not claim ownership or control over any content generated by external AI services (including Sora, Veo, Kling AI, or Fal AI). Users are solely responsible for how they use or share outputs generated via these third-party systems.</p>
+
+        <p class="legal-p"><strong>11.5 No Affiliation or Continuity Representation</strong></p>
+        <p class="legal-p">This application is not a continuation, successor, or derivative work of any previously transferred or assigned app. Any similarity in concept or terminology arises solely from common AI industry terms and not from shared ownership or code.</p>
+
+        <h3 class="legal-section-title">12. Changes to Privacy Policy</h3>
+        <p class="legal-p">This Privacy Policy and Legal Disclaimer may be updated periodically to ensure compliance with legal standards and to reflect functional changes. Updates will be effective upon publication within the App or via official communication channels.</p>
+
+        <h3 class="legal-section-title">13. Data Collection</h3>
+        <p class="legal-p"><strong>Data Collection for AI Analysis:</strong> Our AI Creator app allows users to upload videos to analyze their viral potential. When you explicitly consent and select a video, it is securely transmitted to our third-party AI service provider, Google (Google Gemini API). This data is strictly used for generating your video analysis report and is not utilized for any other purposes. Google provides the same or equal protection of user data as outlined in our privacy policy.</p>
+        <p class="legal-p"><strong>AI Analysis and Third-Party Processing:</strong> To provide our video analysis features, the video content you choose to analyze may be securely transmitted to a third-party artificial intelligence service provider, such as Google (Google Gemini API). This processing is necessary to generate insights, analytics, and reports about the potential performance of your video content.</p>
+        <p class="legal-p">Your video is shared with the third-party provider only after you explicitly grant permission within the application. The content is used solely for the purpose of generating the requested analysis and is not used for any other purpose by our service.</p>
+        <p class="legal-p">We take reasonable measures to ensure that any third-party providers we use process data in accordance with applicable privacy and data protection standards. However, once the content is transmitted to the third-party provider, it will be subject to that provider's own privacy policies and terms.</p>
+        <p class="legal-p">By allowing the analysis feature, you consent to the secure transfer and processing of your selected video by the third-party AI provider for the limited purpose described above.</p>
+
+        <h3 class="legal-section-title">14. Acceptance</h3>
+        <p class="legal-p">By using this App, users acknowledge and agree that: no personal data is collected, external AI services operate independently, and Appzone Dijital Hizmetler Anonim &#350;irketi bears no liability for third-party AI outputs.</p>
+
+        <h3 class="legal-section-title">15. Contact Us</h3>
+        <p class="legal-p">If you have any questions, feedback, suggestions, objections, or complaints regarding this Privacy Policy, or about the collection, use, disclosure, and sharing of your personal data with third parties, you can reach us directly at <a href="mailto:help@appzonedev.com">help@appzonedev.com</a>.</p>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2025 Appzone Dijital Hizmetler A.&#350;. All rights reserved.
+</footer>
+
+<script>
+function closeMob() {
+    document.getElementById('mob').classList.remove('open');
+}
+
+// Scroll reveal
+function initSR() {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.sr').forEach(el => {
+        el.classList.remove('visible');
+        obs.observe(el);
+    });
+}
+initSR();
+</script>
+</body>
+</html>
