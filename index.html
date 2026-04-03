@@ -757,30 +757,30 @@
                 <h2 class="section-heading" style="color: var(--white);">What we build.</h2>
             </div>
             <div class="projects-grid">
-                <a href="https://apps.apple.com/tr/app/ai-music-song-cover-maker/id6755963473" target="_blank" rel="noopener" class="project-card sr sr-d1">
+                <a href="https://apps.apple.com/tr/app/ai-music-song-cover-maker/id6755963473" target="_blank" rel="noopener" class="project-card sr sr-d1" data-app-id="6755963473">
                     <div class="project-thumb project-thumb-1">
-                        <img src="music_icon.png" alt="AI Music · Song & Cover Maker" class="project-app-icon">
+                        <img src="music_icon.png" alt="Musicfy: AI Music Generator" class="project-app-icon">
                     </div>
                     <div class="project-body">
-                        <h3>AI Music &middot; Song &amp; Cover Maker</h3>
+                        <h3 class="app-name">Musicfy: AI Music Generator</h3>
                         <p>AI-powered song creation &amp; voice cloning</p>
                     </div>
                 </a>
-                <a href="https://apps.apple.com/tr/app/ai-video-generator-maker/id6752487396" target="_blank" rel="noopener" class="project-card sr sr-d2">
+                <a href="https://apps.apple.com/tr/app/ai-video-generator-maker/id6752487396" target="_blank" rel="noopener" class="project-card sr sr-d2" data-app-id="6752487396">
                     <div class="project-thumb project-thumb-2">
-                        <img src="video_icon.png" alt="AI Video Generator + Maker" class="project-app-icon">
+                        <img src="video_icon.png" alt="SeedVideo - AI Video Generator" class="project-app-icon">
                     </div>
                     <div class="project-body">
-                        <h3>AI Video Generator + Maker</h3>
+                        <h3 class="app-name">SeedVideo - AI Video Generator</h3>
                         <p>Text &amp; photo to cinematic AI video</p>
                     </div>
                 </a>
-                <a href="https://apps.apple.com/tr/app/ai-detector-checker/id6754876362" target="_blank" rel="noopener" class="project-card sr sr-d3">
+                <a href="https://apps.apple.com/tr/app/ai-detector-checker/id6754876362" target="_blank" rel="noopener" class="project-card sr sr-d3" data-app-id="6754876362">
                     <div class="project-thumb project-thumb-3">
-                        <img src="detector_icon.png" alt="AI Detector & Checker" class="project-app-icon">
+                        <img src="detector_icon.png" alt="GPTZero: AI Detector Humanizer" class="project-app-icon">
                     </div>
                     <div class="project-body">
-                        <h3>AI Detector &amp; Checker</h3>
+                        <h3 class="app-name">GPTZero: AI Detector Humanizer</h3>
                         <p>Detect AI in text, image, audio &amp; video</p>
                     </div>
                 </a>
@@ -858,6 +858,29 @@ function goTo(id) {
 function closeMob() {
     document.getElementById('mob').classList.remove('open');
 }
+
+// Auto-fetch app names from App Store
+function updateAppNames() {
+    const cards = document.querySelectorAll('.project-card[data-app-id]');
+    const ids = Array.from(cards).map(c => c.dataset.appId).join(',');
+    if (!ids) return;
+
+    fetch('https://itunes.apple.com/lookup?id=' + ids + '&country=tr')
+        .then(r => r.json())
+        .then(data => {
+            if (!data.results) return;
+            data.results.forEach(app => {
+                const card = document.querySelector('[data-app-id="' + app.trackId + '"]');
+                if (!card) return;
+                const h3 = card.querySelector('.app-name');
+                if (h3) h3.textContent = app.trackName;
+                const img = card.querySelector('.project-app-icon');
+                if (img) img.alt = app.trackName;
+            });
+        })
+        .catch(() => {}); // fallback to hardcoded names
+}
+updateAppNames();
 
 // Scroll reveal
 function initSR() {
