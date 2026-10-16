@@ -209,6 +209,25 @@
             margin-bottom: 12px;
         }
 
+        .legal-doc-title {
+            margin-top: 96px;
+            padding-top: 48px;
+            border-top: 2px solid var(--border);
+            scroll-margin-top: 72px;
+        }
+
+        .legal-list {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+
+        .legal-list li { margin-bottom: 6px; }
+
+        .legal-list a { color: var(--accent); text-decoration: none; }
+
         /* ===== FOOTER ===== */
         footer {
             background: var(--bg-dark);
@@ -404,6 +423,183 @@
 
         <h3 class="legal-section-title">15. Contact Us</h3>
         <p class="legal-p">If you have any questions, feedback, suggestions, objections, or complaints regarding this Privacy Policy, or about the collection, use, disclosure, and sharing of your personal data with third parties, you can reach us directly at <a href="mailto:help@appzonedev.com">help@appzonedev.com</a>.</p>
+
+        <h2 class="legal-page-title legal-doc-title" id="chatbot">ChatBot Privacy Policy</h2>
+        <p class="legal-p"><strong>Effective date: October 15, 2026</strong></p>
+        <p class="legal-p">This Privacy Policy explains how Appzone Dijital Hizmetler Anonim Şirketi (“we”, “us”, “our”) collects, uses, stores and shares information when you use the ChatBot app for iPhone and iPad (the “App”). If you have questions, contact us at <a href="mailto:help@appzonedev.com">help@appzonedev.com</a>.</p>
+
+        <h3 class="legal-section-title">Summary</h3>
+        <p class="legal-p">The main points of this policy are below. Each of them is explained in detail in the sections that follow.</p>
+        <ul class="legal-list">
+            <li><strong>No account.</strong> You don’t sign up, and we never ask for your email address or phone number.</li>
+            <li><strong>Your chats stay on your device.</strong> We don’t keep copies of your conversations on our servers.</li>
+            <li><strong>AI providers answer your messages.</strong> To generate a reply, your message and anything you attach are sent through our server, which does not store them, to our AI infrastructure provider, and from there to the company behind the AI model you are using (for example OpenAI, Anthropic or Google).</li>
+            <li><strong>Analytics and subscriptions.</strong> We use Amplitude and Google Firebase to understand how the App is used, and RevenueCat to manage subscriptions. These services use app and device identifiers, but they never receive the text of your messages or your attachments.</li>
+            <li><strong>No ads and no tracking.</strong> We don’t sell your data, don’t show ads, don’t access your device’s advertising identifier (IDFA), and don’t track you across other companies’ apps or websites.</li>
+        </ul>
+
+        <h3 class="legal-section-title">1. Information we process</h3>
+        <p class="legal-p"><strong>1.1 What you send to the AI</strong></p>
+        <ul class="legal-list">
+            <li>The messages you type or dictate, and the earlier messages of the same chat that the AI needs as context.</li>
+            <li>Photos you take with the camera or choose from your photo library, and files you attach (such as PDFs and text files).</li>
+            <li>Descriptions of images you ask the App to create, and the pictures you ask it to edit.</li>
+        </ul>
+        <p class="legal-p"><strong>1.2 Personalization you choose to add</strong></p>
+        <ul class="legal-list">
+            <li>Your name, if you add one. It is included with your messages so the AI can address you.</li>
+            <li>Custom instructions (“About you” and “Response style”), included with your messages only while custom instructions are turned on.</li>
+            <li>Memories: short facts the App saves from your chats (for example your city or a project you mention) so later answers can use them. This happens only while “Memory” is on. You can review, delete or turn off memories in Settings › Personalization.</li>
+        </ul>
+        <p class="legal-p"><strong>1.3 Usage, device and purchase information</strong></p>
+        <p class="legal-p">Described in sections 4 to 6: app usage events, device details, approximate location derived from your IP address, app and device identifiers, and your subscription and purchase history.</p>
+        <p class="legal-p"><strong>1.4 What we don’t collect</strong></p>
+        <p class="legal-p">We don’t collect your precise location, contacts, calendar, health data, browsing history or advertising identifier. Payments are handled by Apple, so we never receive your card or bank details.</p>
+
+        <h3 class="legal-section-title">2. How your messages are processed</h3>
+        <p class="legal-p">Each AI request travels this way:</p>
+        <ol class="legal-list">
+            <li>Your device sends the request over an encrypted (HTTPS) connection.</li>
+            <li>Our proxy server, hosted on Cloudflare Workers, adds our API key and forwards the request. It does not store or log the content of your messages, and it removes headers that carry your IP address before passing the request on. For each chat message or image request it records only an anonymous count: the app name, the request type, the AI model and whether it succeeded. No content, no IP address and no identifier is recorded. Cloudflare, as our hosting provider, necessarily processes your IP address to deliver the request.</li>
+            <li>Our AI infrastructure provider, a company based in the United States, receives the request and routes it to the AI model you are using.</li>
+            <li>The AI model provider generates the answer. Depending on the model, this is OpenAI (GPT models), Anthropic (Claude models), Google (Gemini models, and the image model used to create and edit pictures), xAI (Grok models), DeepSeek, or Moonshot AI (Kimi models). When you use “Auto”, the App picks one of these for you.</li>
+        </ol>
+        <p class="legal-p">AI requests are sent without any user ID or device ID. What a request contains:</p>
+        <ul class="legal-list">
+            <li>Your message, the recent messages of the chat, and for long chats a short summary of the older messages.</li>
+            <li>Your name, custom instructions and memories, as described in section 1.2, and the App’s own instructions to the model.</li>
+            <li>Photos are re-encoded on your device before sending, which removes embedded metadata such as location. Image files you attach from the Files app are sent with their original data, which may include metadata.</li>
+            <li>PDFs and pictures to edit are uploaded to our AI infrastructure provider’s temporary file storage and shared with the model through a temporary link. These uploads are deleted after about 24 hours.</li>
+            <li>Text files are included as text, together with their file name.</li>
+        </ul>
+        <p class="legal-p"><strong>2.1 Helper features</strong></p>
+        <p class="legal-p">Some features send a smaller request to an AI model (currently a DeepSeek model). These requests do not include your name, custom instructions or the App’s system instructions:</p>
+        <ul class="legal-list">
+            <li>Chat titles: the first question and answer of a chat, to name it in the sidebar.</li>
+            <li>Summaries: older messages of a long chat, to keep it within the model’s limits.</li>
+            <li>Memories: your messages, to find facts worth remembering (only while Memory is on).</li>
+            <li>Home screen suggestions: up to 15 recent chat titles and your memories, to suggest new conversation starters (only while Memory is on).</li>
+        </ul>
+        <p class="legal-p"><strong>2.2 Web search and image creation</strong></p>
+        <ul class="legal-list">
+            <li>When an answer uses web search, the AI provider runs the search with its own search tool and sees what is searched.</li>
+            <li>Images are created by an image model from Google. The finished image is downloaded to your device directly from our AI infrastructure provider’s file storage.</li>
+        </ul>
+        <p class="legal-p"><strong>2.3 How long AI providers keep data</strong></p>
+        <p class="legal-p">Our AI infrastructure provider keeps request logs (text and metadata) for 2 months and generated images and files for 14 days, then deletes them automatically. AI model providers process requests under their own terms and privacy policies, which may include keeping data for a limited time for safety and abuse monitoring. We don’t control how long these providers keep data. We don’t use your conversations to train AI models, and we don’t sell them. Please don’t share information in a chat that you don’t want these providers to process.</p>
+        <p class="legal-p">AI answers can be inaccurate. Check important information before relying on it.</p>
+
+        <h3 class="legal-section-title">3. Information stored on your device</h3>
+        <p class="legal-p">The App keeps the following only on your device:</p>
+        <ul class="legal-list">
+            <li>Your chats: messages, the model used for each answer, your feedback, and the sources of web answers.</li>
+            <li>Photos and files you attached, and images the App created for you.</li>
+            <li>Your memories, name, custom instructions and settings.</li>
+            <li>Usage counters for chat limits. The counter for paid plans is kept in the iOS Keychain on this device, so it remains if you reinstall the App. It contains only counts.</li>
+            <li>A copy of your subscription status, so limits work offline.</li>
+            <li>Temporary files used to finish an answer while the App is in the background, deleted when the answer arrives.</li>
+        </ul>
+        <p class="legal-p">The App does not sync this data with iCloud. Like other app data, it is included in your device backups (iCloud Backup or a computer backup) if you use them.</p>
+        <p class="legal-p"><strong>Deleting your data:</strong> you can delete a single chat, or all chats in Settings › Delete all chats. This removes the messages, attachments and created images of those chats from your device. Deleting all chats also removes the home screen suggestions written from them. You can delete individual memories or clear all of them in Settings › Personalization, and turn off Memory and custom instructions there. Deleting the App removes all of its data from your device, except the Keychain usage counter described above.</p>
+
+        <h3 class="legal-section-title">4. Analytics</h3>
+        <p class="legal-p">We use analytics to understand how the App is used, fix problems and improve it, for example to see which screens lead to a subscription and to compare versions of a screen.</p>
+        <p class="legal-p"><strong>4.1 Amplitude</strong></p>
+        <p class="legal-p">Amplitude (Amplitude, Inc., United States) receives:</p>
+        <ul class="legal-list">
+            <li>App events: app installed, opened and moved to the background, and sessions; onboarding pages viewed and onboarding completed; upgrade screens viewed and closed (with where they were opened from); plan selected; purchase started, completed, cancelled or failed (with the product and, for failures, the error message); restore completed; message sent (with the AI model used, whether it used your plan’s chats, whether it was a new answer or another version, and the tool used, such as web search); chat limit reached; image created.</li>
+            <li>Profile properties: your plan (free, weekly, monthly or yearly), whether you are a subscriber, the number of extra chats you have bought, the type of build (App Store, TestFlight or development) and the version of a screen you were shown in a test.</li>
+            <li>Device details: device model and manufacturer, iOS version, app version, language, mobile carrier and platform.</li>
+            <li>Approximate location: city, region and country, which Amplitude derives from your IP address.</li>
+            <li>Identifiers: the App’s anonymous RevenueCat ID as user ID, and the identifier for vendor (IDFV) as device ID (see section 6).</li>
+        </ul>
+        <p class="legal-p">Amplitude never receives the text of your messages, your attachments, the images you create or your prompts.</p>
+        <p class="legal-p"><strong>4.2 Google Firebase</strong></p>
+        <p class="legal-p">We use Google Analytics for Firebase, Firebase Remote Config and Firebase A/B Testing (Google LLC, United States):</p>
+        <ul class="legal-list">
+            <li>Google Analytics for Firebase automatically records events such as first open, sessions, engagement time, screens viewed, app and iOS updates, app removal and in-app purchases, together with device details, an app instance ID, the IDFV and an approximate location derived from your IP address. We use the version of the Firebase SDK that does not access the advertising identifier.</li>
+            <li>Firebase Remote Config and A/B Testing let us change some settings of the App without an update and compare versions of a screen. To do this the App sends a Firebase installation ID, your app version, language, country, iOS version and time zone, and may be assigned to a test group. We store that test group in Amplitude and RevenueCat so we can compare results.</li>
+        </ul>
+
+        <h3 class="legal-section-title">5. Purchases and subscriptions</h3>
+        <p class="legal-p">Purchases are processed by Apple under Apple’s terms. We do not receive your payment details.</p>
+        <p class="legal-p">We use RevenueCat (RevenueCat, Inc., United States) to manage subscriptions and chat packs. RevenueCat receives an anonymous app user ID created on your device, your App Store transactions and purchase history, your device model, iOS version, app version, language, App Store country, the IDFV and your IP address. We also store two properties with RevenueCat: your Amplitude device ID and the version of a screen you were shown in a test.</p>
+        <p class="legal-p">RevenueCat sends events about purchases, renewals, cancellations, expirations, billing issues and refunds, including the revenue amount, to Amplitude under the same anonymous user ID, so we can measure subscriptions and revenue.</p>
+
+        <h3 class="legal-section-title">6. Identifiers</h3>
+        <ul class="legal-list">
+            <li>RevenueCat app user ID: a random ID created when you first open the App (for example “$RCAnonymousID:…”). It is used by RevenueCat and as your user ID in Amplitude. It is not linked to your name, email or Apple ID.</li>
+            <li>Identifier for vendor (IDFV): an ID that iOS gives to apps from the same developer on one device. Amplitude uses it as the device ID; Google Analytics for Firebase and RevenueCat also receive it. It changes if you delete all of our apps from your device.</li>
+            <li>Firebase app instance ID and installation ID: random IDs created by Firebase.</li>
+            <li>Advertising identifier (IDFA): not collected. The App does not ask for permission to track you and contains no advertising SDKs.</li>
+        </ul>
+
+        <h3 class="legal-section-title">7. Device permissions</h3>
+        <p class="legal-p">The App asks for these permissions only when you use the related feature. You can change them at any time in your device’s Settings.</p>
+        <ul class="legal-list">
+            <li>Camera: to take a photo to attach to a message.</li>
+            <li>Photos: the photo picker shares only the photos you select. The row of recent photos in the attachment menu asks for access to your photo library; if you allow full access, the App reads your most recent photos to show them as thumbnails. These thumbnails stay on your device; a photo is sent only when you tap it to attach it. You can allow access to selected photos only, or decline.</li>
+            <li>Add to Photos: to save images the App created to your library.</li>
+            <li>Microphone and Speech Recognition: for dictation. Your speech is converted to text by Apple’s speech recognition, on your device when supported; otherwise Apple may process the audio on its servers under Apple’s privacy policy. We don’t receive or store your audio.</li>
+            <li>Notifications: local notifications from your device when an answer or image is ready while you are away from the App. A notification can show the chat’s title and the beginning of the answer on your lock screen. We don’t use a push notification service.</li>
+        </ul>
+        <p class="legal-p">Reading answers aloud uses Apple’s voices on your device and sends nothing.</p>
+
+        <h3 class="legal-section-title">8. How we use information</h3>
+        <ul class="legal-list">
+            <li>To provide the App’s AI features: generating answers and images, chat titles, summaries, memories and suggestions.</li>
+            <li>To provide subscriptions, chat limits and chat packs, and to restore purchases.</li>
+            <li>To understand how the App is used, fix problems and improve it, including testing different versions of screens.</li>
+            <li>To prevent misuse of the App and our services.</li>
+        </ul>
+        <p class="legal-p">If you are in the European Economic Area, the United Kingdom or Switzerland, we rely on these legal bases: performance of our contract with you (AI features, subscriptions and limits); our legitimate interests in understanding and improving the App and keeping it secure (analytics, A/B tests, abuse prevention), which you can object to at any time by contacting us; and your consent for device permissions, which you can withdraw in your device’s Settings.</p>
+
+        <h3 class="legal-section-title">9. Who we share information with</h3>
+        <p class="legal-p">We share information only with the service providers that run the App for us:</p>
+        <ul class="legal-list">
+            <li>Cloudflare, Inc. (United States): hosts our proxy server.</li>
+            <li>AI infrastructure provider (United States): routes AI requests to the model providers and stores uploaded and generated files temporarily.</li>
+            <li>AI model providers: OpenAI, Anthropic, Google, xAI, DeepSeek and Moonshot AI, depending on the model used.</li>
+            <li>Amplitude, Inc. (United States): product analytics.</li>
+            <li>Google LLC (United States): Google Analytics for Firebase, Firebase Remote Config and A/B Testing.</li>
+            <li>RevenueCat, Inc. (United States): subscription management.</li>
+            <li>Apple Inc.: App Store purchases, speech recognition and device services.</li>
+        </ul>
+        <p class="legal-p">We don’t sell your personal information, and we don’t share it for cross-context behavioral advertising. We may disclose information if required by law, to protect our rights or users’ safety, or as part of a merger or acquisition, in which case this policy will continue to apply to your information.</p>
+
+        <h3 class="legal-section-title">10. How long we keep information</h3>
+        <ul class="legal-list">
+            <li>On your device: until you delete it or delete the App.</li>
+            <li>Our proxy: no message content is kept. The anonymous request counts described in section 2 contain no personal information.</li>
+            <li>Our AI infrastructure provider: request logs for 2 months, generated files for 14 days, uploaded files for about 24 hours.</li>
+            <li>AI model providers: according to their own policies.</li>
+            <li>Analytics (Amplitude, Firebase): as long as needed for the purposes above, within each provider’s retention settings.</li>
+            <li>RevenueCat: for as long as needed to provide your subscription and to meet our legal and accounting obligations.</li>
+        </ul>
+
+        <h3 class="legal-section-title">11. International transfers</h3>
+        <p class="legal-p">Our service providers process information in the United States and in other countries where they or their sub-processors operate. AI requests to DeepSeek or Moonshot AI models may be processed by those companies, which are based in China. Where data protection laws require it, we rely on appropriate safeguards offered by our providers, such as the European Commission’s Standard Contractual Clauses.</p>
+
+        <h3 class="legal-section-title">12. Your rights and choices</h3>
+        <ul class="legal-list">
+            <li>On your device: view, edit and delete your chats, memories, name and custom instructions in the App at any time, and turn off Memory and custom instructions.</li>
+            <li>Permissions: allow or deny camera, photos, microphone, speech recognition and notifications in your device’s Settings.</li>
+            <li>Analytics: the App does not currently offer a setting to turn off analytics. You can stop all collection by deleting the App. You can also object to analytics or ask us to delete analytics data by contacting us.</li>
+        </ul>
+        <p class="legal-p">Depending on where you live, you may have the right to access, correct, delete or receive a copy of your personal information, to restrict or object to its processing, and to complain to a data protection authority. This includes rights under the EU and UK GDPR, the California Consumer Privacy Act (including the right to know and to delete, and the right not to be discriminated against for using these rights) and Türkiye’s Personal Data Protection Law No. 6698 (KVKK, Article 11).</p>
+        <p class="legal-p">To make a request, email <a href="mailto:help@appzonedev.com">help@appzonedev.com</a>. Because the App has no accounts, we can only find data that relates to you if you give us something that identifies it, for example the order ID or transaction ID from your App Store receipt. We will respond within the time required by law.</p>
+
+        <h3 class="legal-section-title">13. Children</h3>
+        <p class="legal-p">The App is not directed to children under 13, and we don’t knowingly collect personal information from them. If you believe a child has used the App and provided personal information, contact us and we will help delete it.</p>
+
+        <h3 class="legal-section-title">14. Security</h3>
+        <p class="legal-p">All network traffic from the App is encrypted with HTTPS. Data on your device is protected by iOS. We limit what we collect and what our providers receive. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.</p>
+
+        <h3 class="legal-section-title">15. Changes to this policy</h3>
+        <p class="legal-p">We may update this policy when the App or the law changes. We will post the new version on this page with a new effective date, and for significant changes we will also tell you in the App.</p>
+
+        <h3 class="legal-section-title">16. Contact</h3>
+        <p class="legal-p">Appzone Dijital Hizmetler Anonim Şirketi<br>Email: <a href="mailto:help@appzonedev.com">help@appzonedev.com</a></p>
 
     </div>
 </div>
